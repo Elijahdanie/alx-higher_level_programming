@@ -3,6 +3,7 @@
 
 
 class Square:
+    "A sqaure class that accepts int positive variable size"
     def __init__(self, size=0):
         if(type(size) != int):
             raise TypeError("size must be an integer")
@@ -11,14 +12,17 @@ class Square:
         self.__size = size
     
     def area(self):
+        "Calculates the area of the square and returns the value"
         return self.__size**2
     
     @property
     def size(self):
-        return __size
+        "returns the value of size"
+        return self.__size
     
     @size.setter
     def size(self, value):
+        "sets the value of size"
         if(type(value) != int):
             raise TypeError("size must be an integer")
         if(value < 0):
