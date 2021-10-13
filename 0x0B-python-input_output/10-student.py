@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This modle creates a class named Student"""
 
+
 class Student:
     """A class named Student
 
