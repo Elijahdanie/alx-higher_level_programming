@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """This module defines the save_to_json_file function"""
 
-
 import json
 
 

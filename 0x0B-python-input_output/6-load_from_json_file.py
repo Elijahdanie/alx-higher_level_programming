@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """This module creates an Object from a JSON file"""
 
-
 import json
 
 
