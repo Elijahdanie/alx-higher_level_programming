@@ -1,5 +1,6 @@
 import unittest
 from unittest.case import TestCase
+from models.base import Base
 from models.rectangle import Rectangle
 import io
 import contextlib
@@ -42,3 +43,9 @@ class TestRectangle (TestCase):
         with contextlib.redirect_stdout(f):
             r1.display()
         self.assertEqual(f.getvalue(), "###\n###\n###\n")
+
+    def test_str(self):
+         r1 = Rectangle(4, 6, 2, 1, 12)
+         self.assertEqual(r1.__str__(), '[Rectangle] (12) 2/1 - 4/6')
+         r2 = Rectangle(5, 5, 1)
+         self.assertEqual(r2.__str__(), f'[Rectangle] ({r2.id}) 1/0 - 5/5')

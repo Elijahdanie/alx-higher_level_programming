@@ -1,3 +1,4 @@
+from logging import setLogRecordFactory
 from models.base import Base
 
 class Rectangle (Base):
@@ -11,11 +12,11 @@ class Rectangle (Base):
     y: y coordinate of rectangle
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__(id)
         self.width =  width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
     
     @property
     def width(self):
@@ -97,4 +98,15 @@ class Rectangle (Base):
         This prints the rectangle to the 
         Terminal
         """
-        [print('#' * self.width) for i in range(self.height)]
+        print('\n' * self.__y)
+        [print((' ' * self.x) + ('#' * self.width)) for i in range(self.height)]
+
+    def __str__(self):
+        return f'[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}'
+    
+    def update(self, *args):
+        id, height, width, x, y = args
+        self.height = height
+        self.width = width
+        self.x = x
+        self.y = y
