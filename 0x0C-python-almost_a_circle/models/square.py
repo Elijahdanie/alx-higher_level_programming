@@ -15,16 +15,20 @@ class Square(Rectangle):
     
     @size.setter
     def size(self, value):
-        self.height = value
         self.width = value
+        self.height = value
     
     def update(self, *args, **kwargs):
         prop = ['id','size', 'x', 'y']
         len_args = len(args)
-        if len_args > 0:
-            [setattr(self, prop[i], args[i]) for i in range(len_args)]
+        if  len_args > 0:
+            for i in range(len_args):
+                if type(args[i]) is int:
+                    setattr(self, prop[i], args[i])
         else:
-            [setattr(self, k, v) for k, v in kwargs.items() if k in prop]
+            for k, v in kwargs.items():
+                if k in prop and type(v) is int:
+                    setattr(self, k, v)
 
     def to_dictionary(self):
         prop = ['id','size', 'x', 'y']

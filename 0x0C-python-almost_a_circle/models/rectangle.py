@@ -81,11 +81,10 @@ class Rectangle (Base):
         
         if(type(val) is not int):
             raise TypeError('{} must be an integer'.format(prop))
-        if(val < 0):
-            if (prop in ['x', 'y']):
-                raise ValueError('{} must be >= 0'.format(prop))
-            else:
-                raise ValueError('{} must be > 0'.format(prop))
+        if (prop in ['x', 'y'] and val < 0):
+            raise ValueError('{} must be >= 0'.format(prop))
+        elif (prop in ['height', 'width'] and val <= 0):
+            raise ValueError('{} must be > 0'.format(prop))
         return val
     
 
@@ -97,7 +96,7 @@ class Rectangle (Base):
         This prints the rectangle to the 
         Terminal
         """
-        print('\n' * (self.__y - 1))
+        print('\n' * (self.__y), end ='')
         [print((' ' * self.x) + ('#' * self.width)) for i in range(self.height)]
 
     def __str__(self):
