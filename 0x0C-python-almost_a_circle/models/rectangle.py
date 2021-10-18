@@ -100,10 +100,10 @@ class Rectangle (Base):
     
     def display(self):
         """
-        This prints the rectangle to the 
+        This prints the rectangle to the
         Terminal
         """
-        print('\n' * (self.__y), end ='')
+        print('\n' * (self.__y), end='')
         [print((' ' * self.x) + ('#' * self.width)) for i in range(self.height)]
 
     def __str__(self):
@@ -131,7 +131,7 @@ class Rectangle (Base):
         This returns a dictionary of class attributes
         """
         prop = ['id','width', 'height', 'x', 'y']
-        dict_ ={}
+        dict_ = {}
         for i in prop:
             dict_[i] = getattr(self, i)
         return dict_
