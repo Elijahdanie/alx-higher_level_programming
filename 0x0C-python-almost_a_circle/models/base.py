@@ -133,7 +133,7 @@ class Base:
             for i in list_objs:
                 if list_objs is not None:
                     csv_w.writerow(i.to_dictionary())
-    
+
     @classmethod
     def load_from_file_csv(cls):
         """

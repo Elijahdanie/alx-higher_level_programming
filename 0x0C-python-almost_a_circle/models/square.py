@@ -2,6 +2,7 @@ from logging import setLogRecordFactory
 from typing import Sized
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """This is a Square class
 
@@ -14,17 +15,17 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """Initializes instance of Square class"""
         super().__init__(size, size, x=x, y=y, id=id)
-    
+
     def __str__(self):
         return f'[Square] ({self.id}) {self.x}/{self.y} - {self.width}'
-    
+
     @property
     def size(self):
         """
         Gets the size
         """
         return self.height
-    
+
     @size.setter
     def size(self, value):
         """
@@ -34,7 +35,7 @@ class Square(Rectangle):
         """
         self.width = value
         self.height = value
-    
+
     def update(self, *args, **kwargs):
         """
         This updates class instance attributes
@@ -42,7 +43,7 @@ class Square(Rectangle):
                 *args:Tuple of variables
                 **kwargs: A dictionary of variables
         """
-        prop = ['id','size', 'x', 'y']
+        prop = ['id', 'size', 'x', 'y']
         len_args = len(args)
         if len_args > 0:
             for i in range(len_args):
@@ -57,8 +58,8 @@ class Square(Rectangle):
         """
         This returns a dictionary of class attributes
         """
-        prop = ['id','size', 'x', 'y']
-        dict_ ={}
+        prop = ['id', 'size', 'x', 'y']
+        dict_ = {}
         for i in prop:
             dict_[i] = getattr(self, i)
         return dict_

@@ -4,6 +4,7 @@ from models.base import Base
 This module represents the base for any four sided shape
 """
 
+
 class Rectangle (Base):
     """This is a Rectangle class
 
@@ -20,22 +21,21 @@ class Rectangle (Base):
         self.x = x
         self.y = y
         super().__init__(id)
-    
+
     @property
     def width(self):
         """
         Get value of width
         """
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """
         Sets the value of width
         """
         self.__width = self.validate('width', value)
-    
-    
+
     @property
     def height(self):
         """
@@ -49,7 +49,7 @@ class Rectangle (Base):
         sets the value of private instance variable __height
         """
         self.__height = self.validate('height', value)
-    
+
     @property
     def x(self):
         """
@@ -63,14 +63,14 @@ class Rectangle (Base):
         Sets Value of __x
         """
         self.__x = self.validate('x', value)
-    
+
     @property
     def y(self):
         """
         Gets Value of private instance variable __y
         """
         return self.__y
-    
+
     @y.setter
     def y(self, value):
         """
@@ -80,9 +80,10 @@ class Rectangle (Base):
 
     def validate(self, prop, val):
         """
-        This is a helper class for validating inputs to private instance attributes
+        This is a helper class for validating
+         inputs to private instance attributes
         """
-        
+
         if(type(val) is not int):
             raise TypeError('{} must be an integer'.format(prop))
         if (prop in ['x', 'y'] and val < 0):
@@ -90,28 +91,29 @@ class Rectangle (Base):
         elif (prop in ['height', 'width'] and val <= 0):
             raise ValueError('{} must be > 0'.format(prop))
         return val
-    
 
     def area(self):
         """
         Computes the area
         """
         return self.width * self.height
-    
+
     def display(self):
         """
         This prints the rectangle to the
         Terminal
         """
         print('\n' * (self.__y), end='')
-        [print((' ' * self.x) + ('#' * self.width)) for i in range(self.height)]
+        for i in range(self.height):
+            print((' ' * self.x) + ('#' * self.width))
 
     def __str__(self):
         """
         returns the string representation of the class
         """
-        return f'[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}'
-    
+        return f"""[Rectangle] ({self.id}) {self.x}/{self.y}
+        - {self.width}/{self.height}"""
+
     def update(self, *args, **kwargs):
         """
         This updates class instance attributes
@@ -119,7 +121,7 @@ class Rectangle (Base):
                 *args:Tuple of variables
                 **kwargs: A dictionary of variables
         """
-        prop = ['id','width', 'height', 'x', 'y']
+        prop = ['id', 'width', 'height', 'x', 'y']
         len_args = len(args)
         if len_args > 0:
             [setattr(self, prop[i], args[i]) for i in range(len_args)]
@@ -130,7 +132,7 @@ class Rectangle (Base):
         """
         This returns a dictionary of class attributes
         """
-        prop = ['id','width', 'height', 'x', 'y']
+        prop = ['id', 'width', 'height', 'x', 'y']
         dict_ = {}
         for i in prop:
             dict_[i] = getattr(self, i)
