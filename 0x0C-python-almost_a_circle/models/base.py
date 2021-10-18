@@ -123,11 +123,16 @@ class Base:
             list_objs: This is a list of class instances
         """
         file_name = cls.__name__ + '.csv'
-        field_names = ['id','width', 'height', 'x', 'y'] if file_name == 'Rectangle.csv' else ['id','size', 'x', 'y']
+        if file_name == 'Rectangle.csv':
+            field_names = ['id', 'width', 'height', 'x', 'y']
+        else:
+            field_names = ['id', 'size', 'x', 'y']
         with open(file_name, 'w', encoding='utf-8') as fp:
             csv_w = csv.DictWriter(fp, fieldnames=field_names)
             csv_w.writeheader()
-            [csv_w.writerow(i.to_dictionary()) for i in list_objs if list_objs is not None]
+            for i in list_objs:
+                if list_objs is not None:
+                    csv_w.writerow(i.to_dictionary())
     
     @classmethod
     def load_from_file_csv(cls):
