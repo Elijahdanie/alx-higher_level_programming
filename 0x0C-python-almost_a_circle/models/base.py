@@ -5,9 +5,10 @@ import os.path
 import csv
 
 """
-This module represents the base class for all 
+This module represents the base class for all
 subsequent classes in this package
 """
+
 
 class Base:
     """
@@ -36,7 +37,6 @@ class Base:
         """Resets number of objects for testing"""
         Base.__nb_objects = 0
 
-
     @staticmethod
     def to_json_string(list_dictionaries):
         """
@@ -45,7 +45,7 @@ class Base:
         Args:
             list_dictionaries: This is the list of dictionary to convert
         """
-        if(list_dictionaries is None or len(list_dictionaries)== 0):
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -72,7 +72,7 @@ class Base:
         Args:
             json_string: This is the string representing a list of dictionaries
         """
-        if json_string == None:
+        if json_string is None:
             return []
         else:
             return json.loads(json_string)
@@ -82,13 +82,13 @@ class Base:
         """
         This creates an instance of a class cls from
         a dictionary
-        
+
         Args:
             cls: This is the class type to be intanced
             **dictionary: This is the dictionary containing class variables
         """
         if cls.__name__ == 'Rectangle':
-            n = cls(1,1)
+            n = cls(1, 1)
             n.update(**dictionary)
             return n
         elif cls.__name__ == 'Square':
@@ -105,13 +105,15 @@ class Base:
         """
         file_name = cls.__name__ + '.json'
         if os.path.exists(file_name):
-            with open(file_name, 'r', encoding= 'utf-8') as fp:
+            with open(file_name, 'r', encoding='utf-8') as fp:
                 ls_str_instance = Base.from_json_string(fp.read())
                 ls_rl_instances = []
-                [ls_rl_instances.append(cls.create(**i)) for i in ls_str_instance]
+                for i in ls_str_instance:
+                    ls_rl_instances.append(cls.create(**i))
                 return ls_rl_instances
         else:
             return []
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """
@@ -122,7 +124,7 @@ class Base:
         """
         file_name = cls.__name__ + '.csv'
         field_names = ['id','width', 'height', 'x', 'y'] if file_name == 'Rectangle.csv' else ['id','size', 'x', 'y']
-        with open(file_name, 'w', encoding= 'utf-8') as fp:
+        with open(file_name, 'w', encoding='utf-8') as fp:
             csv_w = csv.DictWriter(fp, fieldnames=field_names)
             csv_w.writeheader()
             [csv_w.writerow(i.to_dictionary()) for i in list_objs if list_objs is not None]

@@ -44,7 +44,7 @@ class Square(Rectangle):
         """
         prop = ['id','size', 'x', 'y']
         len_args = len(args)
-        if  len_args > 0:
+        if len_args > 0:
             for i in range(len_args):
                 if type(args[i]) is int:
                     setattr(self, prop[i], args[i])
