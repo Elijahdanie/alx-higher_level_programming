@@ -1,7 +1,11 @@
 from models.base import Base
 
+"""
+This module represents the base for any four sided shape
+"""
+
 class Rectangle (Base):
-    """This is a rectangle class
+    """This is a Rectangle class
 
     Attributes:
     id: id of object
@@ -89,6 +93,9 @@ class Rectangle (Base):
     
 
     def area(self):
+        """
+        Computes the area
+        """
         return self.width * self.height
     
     def display(self):
@@ -100,9 +107,18 @@ class Rectangle (Base):
         [print((' ' * self.x) + ('#' * self.width)) for i in range(self.height)]
 
     def __str__(self):
+        """
+        returns the string representation of the class
+        """
         return f'[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}'
     
     def update(self, *args, **kwargs):
+        """
+        This updates class instance attributes
+            Args:
+                *args:Tuple of variables
+                **kwargs: A dictionary of variables
+        """
         prop = ['id','width', 'height', 'x', 'y']
         len_args = len(args)
         if len_args > 0:
@@ -111,6 +127,9 @@ class Rectangle (Base):
             [setattr(self, k, v) for k, v in kwargs.items() if k in prop]
 
     def to_dictionary(self):
+        """
+        This returns a dictionary of class attributes
+        """
         prop = ['id','width', 'height', 'x', 'y']
         dict_ ={}
         for i in prop:

@@ -3,7 +3,16 @@ from typing import Sized
 from models.rectangle import Rectangle
 
 class Square(Rectangle):
+    """This is a Square class
+
+    Attributes:
+    id: id of object
+    size: this is the size of square
+    x: x coordinate of rectangle
+    y: y coordinate of rectangle
+    """
     def __init__(self, size, x=0, y=0, id=None):
+        """Initializes instance of Square class"""
         super().__init__(size, size, x=x, y=y, id=id)
     
     def __str__(self):
@@ -11,14 +20,28 @@ class Square(Rectangle):
     
     @property
     def size(self):
+        """
+        Gets the size
+        """
         return self.height
     
     @size.setter
     def size(self, value):
+        """
+        This sets the size of the square
+        Args:
+            value: Value to set
+        """
         self.width = value
         self.height = value
     
     def update(self, *args, **kwargs):
+        """
+        This updates class instance attributes
+            Args:
+                *args:Tuple of variables
+                **kwargs: A dictionary of variables
+        """
         prop = ['id','size', 'x', 'y']
         len_args = len(args)
         if  len_args > 0:
@@ -31,6 +54,9 @@ class Square(Rectangle):
                     setattr(self, k, v)
 
     def to_dictionary(self):
+        """
+        This returns a dictionary of class attributes
+        """
         prop = ['id','size', 'x', 'y']
         dict_ ={}
         for i in prop:
