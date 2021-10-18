@@ -108,11 +108,9 @@ class Rectangle (Base):
             print((' ' * self.x) + ('#' * self.width))
 
     def __str__(self):
-        """
-        returns the string representation of the class
-        """
-        return f"""[Rectangle] ({self.id}) {self.x}/{self.y}
-        - {self.width}/{self.height}"""
+        """Returns the informal representation of the object"""
+        return"[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """
