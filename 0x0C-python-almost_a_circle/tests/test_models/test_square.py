@@ -549,10 +549,16 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(f.getvalue(), "\n\n\n ###\n ###\n ###\n")
 
     def test_area_method(self):
+        """
+        This test area computation
+        """
         s3 = Square(3, 1, 3)
         self.assertEqual(s3.area(), 9)
 
     def test_area_methodwithargthrowerror(self):
+        """
+        This test for positional error on area function
+        """
         s3 = Square(3, 1, 3)
         with self.assertRaises(TypeError) as e:
             s3.area(9)

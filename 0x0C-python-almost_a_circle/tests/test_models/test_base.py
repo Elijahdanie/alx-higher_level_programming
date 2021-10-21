@@ -159,6 +159,9 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(r1 == r2, False)
 
     def test_loadfromfile(self):
+        """
+        This test load from file function
+        """
         os.remove("Rectangle.json")
         Base.reset_objects()
         r1 = Rectangle(10, 7, 2, 8)

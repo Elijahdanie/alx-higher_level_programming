@@ -751,6 +751,9 @@ on"""
         self.assertEqual(r1.id, 1)
 
     def test_badkeyignored(self):
+        """
+        test for a bad key passed in the update function being ignored
+        """
         r1 = Rectangle(10, 10, 10, 10, 10)
         r1.update(1, 2, 3, 4, 5, foo=20)
         self.assertEqual(r1.id, 1)
