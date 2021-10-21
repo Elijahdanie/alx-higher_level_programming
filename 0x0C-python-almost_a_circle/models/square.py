@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from logging import setLogRecordFactory
 from typing import Sized
 from models.rectangle import Rectangle
@@ -17,7 +19,10 @@ class Square(Rectangle):
         super().__init__(size, size, x=x, y=y, id=id)
 
     def __str__(self):
-         return"[Square] ({:d}) {:d}/{:d} - {:d}".format(
+        """
+        This returns the string representation of sqaure class
+        """
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(
             self.id, self.x, self.y, self.size)
 
     @property
