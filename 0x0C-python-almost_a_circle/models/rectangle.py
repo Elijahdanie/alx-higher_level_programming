@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-from models.base import Base
-
 """
 This module represents the base for any four sided shape
 """
+
+from models.base import Base
 
 
 class Rectangle (Base):

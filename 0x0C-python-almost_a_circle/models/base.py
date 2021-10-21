@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-
-import json
-import os.path
-import csv
-
 """
 This module represents the base class for all
 subsequent classes in this package
 """
+
+
+import json
+import os.path
+import csv
 
 
 class Base:
