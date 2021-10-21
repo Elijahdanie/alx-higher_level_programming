@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-from logging import setLogRecordFactory
 from typing import Sized
 from models.rectangle import Rectangle
 
