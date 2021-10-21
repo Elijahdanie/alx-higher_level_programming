@@ -55,11 +55,11 @@ class Square(Rectangle):
         len_args = len(args)
         if len_args > 0:
             for i in range(len_args):
-                if type(args[i]) is int:
+                if type(args[i]) == int:
                     setattr(self, prop[i], args[i])
         else:
             for k, v in kwargs.items():
-                if k in prop and type(v) is int:
+                if k in prop and type(v) == int:
                     setattr(self, k, v)
 
     def to_dictionary(self):
