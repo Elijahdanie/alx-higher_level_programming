@@ -4,7 +4,6 @@ This module represents a Sqauare
 """
 
 
-from typing import Sized
 from models.rectangle import Rectangle
 
 
