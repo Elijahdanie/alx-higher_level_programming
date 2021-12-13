@@ -11,5 +11,5 @@ if (!isNaN(x)) {
 }
 else
 {
-    console.log('Missing number of occurrences')
+    console.log('Missing number of occurrences');
 }
