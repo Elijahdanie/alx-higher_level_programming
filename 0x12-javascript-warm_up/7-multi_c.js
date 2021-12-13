@@ -9,7 +9,6 @@ if (!isNaN(x)) {
         }
     }
 }
-else
-{
+else {
     console.log('Missing number of occurrences');
 }
