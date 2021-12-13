@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 let x = process.argv[2];
 if (!isNaN(x)) {
     x = parseInt(x);
