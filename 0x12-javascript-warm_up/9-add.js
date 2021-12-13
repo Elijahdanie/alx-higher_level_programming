@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 function add(a, b) {
-    console.log(`${(a+b)}`);
+    console.log(`${(a + b)}`);
 }
 
 let first_val = parseInt(process.argv[2]);
