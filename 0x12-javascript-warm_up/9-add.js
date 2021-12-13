@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const add = (a, b)=>{
+function add(a, b) {
     console.log(`${(a+b)}`);
 }
 

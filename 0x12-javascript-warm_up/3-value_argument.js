@@ -1,13 +1,7 @@
 #!/usr/bin/node
 
-let len = 0;
-process.argv.forEach (element => {
-    len++;
-});
-if (len == 2) {
-    console.log('No argument');
-}
-else if (len === 3)
-{
+if (process.argv[2) {
     console.log(process.argv[2]);
+} else {
+    console.log('No argument');
 }

@@ -13,7 +13,6 @@ if (!isNaN(x)) {
             console.log(`${line}`);
         }
     }
-}
-else {
+} else {
     console.log('Missing size');
 }
