@@ -8,7 +8,6 @@ if (!isNaN(x)) {
             console.log('C is fun');
         }
     }
-}
-else {
+} else {
     console.log('Missing number of occurrences');
 }
