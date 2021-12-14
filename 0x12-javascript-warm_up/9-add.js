@@ -1,10 +1,10 @@
 #!/usr/bin/node
 
-function add(a, b) {
-    console.log(`${(a + b)}`);
+function add (a, b) {
+  console.log(`${(a + b)}`);
 }
 
-let first_val = parseInt(process.argv[2]);
-let second_val = parseInt(process.argv[3]);
+const firstVal = parseInt(process.argv[2]);
+const secondVal = parseInt(process.argv[3]);
 
-add(first_val, second_val);
+add(firstVal, secondVal);
