@@ -12,7 +12,9 @@ if __name__ == '__main__':
                                 user=sys.argv[2],
                                 db=sys.argv[3])
     cursor = conn.cursor()
-    cursor.execute("select * from states where name = '{}' order by id ASC".format(sys.argv[4]))
+    cursor.execute(
+        "select * from states where name = '{}' order by id ASC".format(
+            sys.argv[4]))
     result = cursor.fetchall()
     for i in result:
         print(i)
