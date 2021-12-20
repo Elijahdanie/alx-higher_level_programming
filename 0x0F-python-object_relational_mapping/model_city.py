@@ -7,6 +7,10 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import State, Base
 
 class City(Base):
+    """
+    This class represents the City Object of the City table
+    In the database
+    """
     __tablename__ = 'cities'
     id = Column(Integer, nullable=False, primary_key=True, autoincrement=True)
     name = Column(String(200), nullable=False)

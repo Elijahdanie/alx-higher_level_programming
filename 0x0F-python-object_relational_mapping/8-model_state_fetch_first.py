@@ -1,4 +1,5 @@
-#!usr/bin/python3
+#!/usr/bin/python3
+
 """
 This Module fetches the first record of states in the 
 database using sqlalchemy

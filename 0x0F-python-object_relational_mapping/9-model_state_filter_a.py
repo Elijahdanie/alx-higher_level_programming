@@ -1,4 +1,5 @@
 #!usr/bin/python3
+
 """
 This module fetches states that contains the letter 'a'
 from the database
