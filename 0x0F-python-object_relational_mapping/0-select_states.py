@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This module selects all states ordered by states.id in 
+""" This module selects all states ordered by states.id in
 Ascending order """
 
 import MySQLdb
