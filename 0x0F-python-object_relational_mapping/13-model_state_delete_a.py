@@ -14,5 +14,5 @@ if __name__ == '__main__':
     session = sessionmaker(engine)()
     result = session.query(State).filter(
         State.name.contains('a%')
-    ).delete(synchronize_session = 'fetch')
+    ).delete(synchronize_session='fetch')
     session.commit()

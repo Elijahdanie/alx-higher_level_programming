@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module fecthes states and cities records from
-the database using the foreign key relationship 
+the database using the foreign key relationship
 cities.state_id
 """
 import sys
@@ -13,8 +13,10 @@ if __name__ == '__main__':
                                 user=sys.argv[2],
                                 db=sys.argv[3])
     cursor = conn.cursor()
-    cursor.execute("SELECT cities.id, cities.name, states.name FROM cities " +
-                        "INNER JOIN states ON states.id = cities.state_id order by id ASC")
+    query1 = "SELECT cities.id, cities.name, states.name "
+    query2 = "FROM cities INNER JOIN states ON "
+    query3 = "states.id = cities.state_id order by id ASC"
+    cursor.execute(query1 + query2 + query3)
     result = cursor.fetchall()
     for i in result:
         print(i)

@@ -14,14 +14,14 @@ if __name__ == '__main__':
                                 db=sys.argv[3])
     cursor = conn.cursor()
     target_state = sys.argv[4]
-    cursor.execute("SELECT cities.name FROM cities INNER JOIN states ON " +
-                    "states.id = cities.state_id WHERE states.name = %s",
-                    (target_state,))
+    query1 = "SELECT cities.name FROM cities INNER JOIN states ON "
+    query2 = "states.id = cities.state_id WHERE states.name = %s"
+    cursor.execute(query1 + query2, (target_state,))
     result = cursor.fetchall()
     values = ''
     for i in result:
         for j in i:
-            values +=j + ', '
+            values += j + ', '
     print(values[:-2])
     cursor.close()
     conn.close()
