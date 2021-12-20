@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-""" This module, list all the cities joined by their states"""
-
+"""
+ This module, list all the cities joined by their states
+"""
 
 import sys
 from model_city import City
