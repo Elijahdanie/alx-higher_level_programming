@@ -3,6 +3,7 @@
 This module calculates the peak in an array of numbers
 """
 
+
 def find_peak(list_of_integers):
     """
     This finds the peak from the array
