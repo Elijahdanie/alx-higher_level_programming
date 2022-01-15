@@ -3,6 +3,7 @@
 This module calculates the peak in an array of numbers
 """
 
+
 def find_peak(list_of_integers):
     """
     This finds the peak from the array
@@ -14,11 +15,11 @@ def find_peak(list_of_integers):
     right = len(list_of_integers) - 1
     iteration = int(len(list_of_integers)/2)
     for i in range(iteration):
-        peak = isgreater(list_of_integers[left],
-        list_of_integers[right], peak)
+        peak = isgreater(list_of_integers[left], list_of_integers[right], peak)
         right = right - 1
         left = left + 1
     return peak
+
 
 def isgreater(curr, comp1, peak):
     """
