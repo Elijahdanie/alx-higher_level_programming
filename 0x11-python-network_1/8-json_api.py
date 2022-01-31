@@ -2,7 +2,6 @@
 """this searches for specified user and prints
    the values of ir and name of json returned
 """
-from json.decoder import JSONDecodeError
 import requests
 import sys
 
@@ -16,5 +15,5 @@ if __name__ == "__main__":
             print("[{}] {}".format(jdata['id'], jdata['name']))
         else:
             print("No result")
-    except JSONDecodeError:
+    except:
         print("Not a valid JSON")
