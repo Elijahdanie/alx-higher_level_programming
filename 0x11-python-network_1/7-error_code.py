@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 This prints error code from response or content
 of the webpage queried
