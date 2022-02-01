@@ -10,7 +10,7 @@ const url = process.argv[2];
 const filepath = process.argv[3];
 
 request.get(url, (err, res, body) => {
-  if (!err && res.statusCode == 200) {
+  if (!err && res.statusCode === 200) {
     fs.writeFile(filepath, body, 'utf-8', (err) => {
       if (err) {
         console.log(err);
