@@ -5,7 +5,7 @@
 
 const request = require('request');
 
-const api_Url = process.argv[1];
+const api_Url = process.argv[2];
 
 const finalObj = {};
 

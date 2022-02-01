@@ -6,8 +6,8 @@
 const fs = require('fs');
 const request = require('request');
 
-const url = process.argv[1];
-const filepath = process.argv[2];
+const url = process.argv[2];
+const filepath = process.argv[3];
 
 request.get(url, (err, res, body) => {
   if (!err && res.statusCode == 200) {

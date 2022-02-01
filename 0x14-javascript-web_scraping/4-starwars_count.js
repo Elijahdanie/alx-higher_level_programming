@@ -6,7 +6,7 @@ const api_Url = 'https://swapi-api.hbtn.io/api/';
 
 const characterUrl = `${api_Url}people/18/`;
 
-const parseurl = `${process.argv[1]}`;
+const parseurl = `${process.argv[2]}`;
 
 request.get(parseurl, (err, res, body) => {
   if (!err && res.statusCode == 200) {

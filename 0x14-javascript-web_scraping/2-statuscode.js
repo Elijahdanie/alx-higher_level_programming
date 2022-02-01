@@ -4,7 +4,7 @@
 
 const req = require('request');
 
-const url = process.argv[1];
+const url = process.argv[2];
 
 req.get(url, (err, res, body) => {
   if (err) { console.log(err); } else { console.log(`code: ${res.statusCode}`); }
