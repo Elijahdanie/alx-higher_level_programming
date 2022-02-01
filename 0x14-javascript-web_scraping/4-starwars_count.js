@@ -12,7 +12,7 @@ const characterUrl = `${apiUrl}people/18/`;
 const parseurl = `${process.argv[2]}`;
 
 request.get(parseurl, (err, res, body) => {
-  if (!err && res.statusCode === 200) {
+  if (!err) {
     const data = JSON.parse(body).results;
     let count = 0;
     for (let i = 0; i < data.length; i++) {
