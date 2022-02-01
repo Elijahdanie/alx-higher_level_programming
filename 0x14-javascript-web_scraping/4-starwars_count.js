@@ -23,7 +23,7 @@ request.get(parseurl, (err, res, body) => {
       }
     }
     console.log(count);
-  } else if (err) {
+  } else {
     console.log(err);
   }
 });
